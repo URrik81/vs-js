@@ -1,0 +1,14 @@
+{
+  "name": "myapp",
+  "version": "1.0.0",
+  "description": "descript-ok",
+  "main": "app.js",
+  "scripts": {
+    "test": "runHello"
+  },
+  "keywords": [
+    "qqq"
+  ],
+  "author": "qqq",
+  "license": "ISC"
+}

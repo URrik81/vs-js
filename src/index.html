@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <style>
+   #container {
+     height: 600px;
+     width:1500px;
+     display: flex;
+   }
+   #map #units {display: inline-block; *display: inline; zoom: 1; vertical-align: top;}
+   #map {
+    overflow: scroll; /* Добавляем полосы прокрутки */
+    width: 80%; /* Ширина блока */
+    height: 100%; /* Высота блока */
+    padding: 2px; /* Поля вокруг текста */
+    border: solid 1px black; /* Параметры рамки */
+   }
+   #units {
+    width: 20%; /* Ширина блока */
+    height: 100%; /* Высота блока */
+    padding: 2px; /* Поля вокруг текста */
+    border: solid 1px black; /* Параметры рамки */
+   }
+  </style>
+  </head>
+  <body>
+    <h1 id="heading"></h1>
+    <div id="container">
+      <div id="map" class="map" id="canvas-frame">
+        <canvas id="canvas-container"></canvas>
+      </div>
+      <div id="units" class="units" id="canvas-frame">
+       <img id="knight" src="img/a_knight.bmp"/>
+      </div>
+    </div>
+  <p id="status_bar" width="250" height="250" scrolling="true" >Status:
+    <input id="status_bar_field" type="text" name="status_bar_field">
+  </p>
+  <p id="axisX" width="250" height="250" scrolling="true" >X: 
+    <input id="axisXinput" type="text" name="posx">
+  </p>
+  <p id="axisY" width="250" height="250" scrolling="true" >Y: 
+    <input id="axisYinput" type="text" name="posy">
+  </p>
+      <script type="text/javascript" src="js/index.js"></script>
+  </body>
+
+</html>
