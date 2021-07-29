@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+   #container {
+     height: 600px;
+     width:1500px;
+     display: flex;
+   }
+   #map {display: inline-block; *display: inline; zoom: 1; vertical-align: top;}
+   #map {
+    overflow: scroll; /* Добавляем полосы прокрутки */
+    width: 80%; /* Ширина блока */
+    height: 100%; /* Высота блока */
+    padding: 2px; /* Поля вокруг текста */
+    border: solid 1px black; /* Параметры рамки */
+   }
+  </style>
+  </head>
+  <body>
+    <div id="container">
+      <div id="map" class="map" id="canvas-frame">
+        <canvas id="canvas-container"></canvas>
+      </div>
+    </div>
+  </body>
+</html>
