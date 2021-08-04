@@ -7,10 +7,16 @@
      width:1500px;
      display: flex;
    }
-   #map {display: inline-block; *display: inline; zoom: 1; vertical-align: top;}
+   #map #units {display: inline-block; *display: inline; zoom: 1; vertical-align: top;}
    #map {
     overflow: scroll; /* Добавляем полосы прокрутки */
     width: 80%; /* Ширина блока */
+    height: 100%; /* Высота блока */
+    padding: 2px; /* Поля вокруг текста */
+    border: solid 1px black; /* Параметры рамки */
+   }
+   #units {
+    width: 20%; /* Ширина блока */
     height: 100%; /* Высота блока */
     padding: 2px; /* Поля вокруг текста */
     border: solid 1px black; /* Параметры рамки */
@@ -21,6 +27,9 @@
     <div id="container">
       <div id="map" class="map" id="canvas-frame">
         <canvas id="canvas-container"></canvas>
+      </div>
+      <div id="units" class="units" id="canvas-frame">
+       <img id="knight" src="img/a_knight.bmp"/>
       </div>
     </div>
   </body>

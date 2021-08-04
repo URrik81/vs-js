@@ -1,0 +1,5 @@
+# Untracked files:
+# js node libraries
+node_modules/*
+# database
+src/db/*
