@@ -1,35 +1,74 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <script src="js/map-redactor.js"></script>
     <style>
    #container {
      height: 600px;
      width:1500px;
      display: flex;
    }
-   #map #units {display: inline-block; *display: inline; zoom: 1; vertical-align: top;}
+   #map #terrans #tools{display: inline-block; *display: inline; zoom: 1; vertical-align: top;}
    #map {
     overflow: scroll; /* Добавляем полосы прокрутки */
     width: 80%; /* Ширина блока */
     height: 100%; /* Высота блока */
-    padding: 2px; /* Поля вокруг текста */
+    padding: 5px; /* Поля вокруг текста */
     border: solid 1px black; /* Параметры рамки */
    }
-   #units {
+   #tools{
     width: 20%; /* Ширина блока */
     height: 100%; /* Высота блока */
-    padding: 2px; /* Поля вокруг текста */
+    padding: 5px; /* Поля вокруг текста */
     border: solid 1px black; /* Параметры рамки */
+   }
+   #brushes{
+    width: 95%; /* Ширина блока */
+    height: 15%; /* Высота блока */
+    padding: 5px; /* Поля вокруг текста */
+    border: solid 1px black; /* Параметры рамки */
+   }
+   #terrans{
+    width: 95%; /* Ширина блока */
+    height: 45%; /* Высота блока */
+    padding: 5px; /* Поля вокруг текста */
+    border: solid 1px black; /* Параметры рамки */
+   }
+   .vs-button{
+     border: solid 1px black; /* Параметры рамки */
+     background: #A0A0A0
+   }
+   .vs-button-pressed{
+     @extend.vs-button;
+     background: #E0E0E0
+   }
+   #terran_button{
+    @extend.vs-button;
+    width: 10%; /* Ширина блока */
+    height: 0; /* Высота блока */
+    padding: 10%; /* Поля вокруг текста */
+    margin: 10%
+
    }
   </style>
   </head>
   <body>
+
     <div id="container">
       <div id="map" class="map" id="canvas-frame">
         <canvas id="canvas-container"></canvas>
       </div>
-      <div id="units" class="units" id="canvas-frame">
-       <img id="knight" src="img/a_knight.bmp"/>
+      <div id="tools" class="tools" >
+        <div id="brushes" class="brushes" >
+           <p>Кисти</p>
+           <button id="brush1" title="1 клетка" alt="1 клетка">1*1</button>
+           <button id="brush3" title="9 клеток" alt="9 клеток">3*3</button>
+           <button id="brush5" title="25 клеток" alt="25 клеток">5*5</button>
+           <button id="brush0" title="0 клеток" alt="0 клеток">0*0</button>
+        </div>
+        <div id="terrans" class="terrans" >
+           <p>Рельеф</p>
+        </div>
       </div>
     </div>
   </body>

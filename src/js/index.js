@@ -17,27 +17,6 @@ initCanvas();
 initUnits();
 addHeadingToPage();
 
-/*function addGrid() {
-	logInfo('addGrid started');
-    var width = 960;
-    var height = 960;
-    var x = 0;
-    var y = 0;
-    context.strokeStyle = 'black'
-    for(i = x; i < width; i += 32) {
-	    context.moveTo(i, y);
-		context.lineTo(i, height);
-		context.stroke();
-    }
-	for(i = y; i < height; i += 32) {
-	    context.moveTo(x, i);
-		context.lineTo(width, i);
-		context.stroke();
-    }
-	logInfo('addGrid ended');
-}
-//addGrid();//*/
-
 //not needed
 function addHeadingToPage() {
     var heading = document.getElementById('heading')
