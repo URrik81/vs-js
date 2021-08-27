@@ -3,6 +3,7 @@
 document.addEventListener("DOMContentLoaded", function(event) { 
 console.log("Map editor is ready");
 var brushSize = 1;
+var selectedTerran = 0;
 
 var brush1 = document.getElementById("brush1");
 var brush3 = document.getElementById("brush3");
@@ -36,10 +37,12 @@ xhr.onload = function() {
        button.title = obj.Name;
        button.alt = obj.Name;
        button.style.background = "#" + color;
-       button.id = "terran_button"
+       button.id = "terran-button-" + i;
+       button.classList.add("vs-button");
+       button.classList.add("terran-button");
        myDiv.appendChild(button);
-
     }
+    initTerranButtons(objectArray.length);
   }
 };
 
@@ -78,21 +81,52 @@ function checkBrushes(size) {
   console.log("checkBrushes with size " + brushSize);
   switch (brushSize) {
     case 3:
-     brush1.style = "vs-button";
-     brush3.style = "vs-button-pressed";
-     brush5.style = "vs-button";
+     brush1.classList.remove('vs-button-pressed');
+     brush3.classList.add('vs-button-pressed');
+     brush5.classList.remove('vs-button-pressed');
      break;
     case 5:
-     brush1.style = "vs-button";
-     brush3.style = "vs-button";
-     brush5.style = "vs-button-pressed";
+     brush1.classList.remove('vs-button-pressed');
+     brush3.classList.remove('vs-button-pressed');
+     brush5.classList.add('vs-button-pressed');
      break;
     case 1:
     default:
-     brush1.style = "vs-button-pressed";
-     brush3.style = "vs-button";
-     brush5.style = "vs-button";
+     brush1.classList.add('vs-button-pressed');
+     brush3.classList.remove('vs-button-pressed');
+     brush5.classList.remove('vs-button-pressed');
      brushSize = 1;
   }
 }
+
+function initTerranButtons(size) {
+  console.log("initTerranButtons with size " + size);
+  for (i = 0; i < size; i++) {
+       button  = document.getElementById("terran-button-" + i);
+       const j = i;
+       button.addEventListener("click", function(event) {
+         checkTerrans(j, objectArray.length);
+       });
+  }
+}
+
+function checkTerrans(buttonId, size) {
+  brushSize = size;
+  for (i = 0; i < size; i++) {
+    button  = document.getElementById("terran-button-" + i);
+    if (typeof(button) != 'undefined' && button != null)
+    {
+      if (i == buttonId) {
+        button.classList.add('vs-button-pressed');
+      } else {
+        button.classList.remove('vs-button-pressed');
+      }
+    } else {
+      console.log("button undefined!!!");
+    }
+  }
+}
+//EOF
 });
+
+
