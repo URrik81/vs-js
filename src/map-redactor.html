@@ -9,11 +9,22 @@
      display: flex;
    }
    #map #terrans #tools{display: inline-block; *display: inline; zoom: 1; vertical-align: top;}
-   #map {
-    overflow: scroll; /* Добавляем полосы прокрутки */
+   
+   #map-container {
     width: 80%; /* Ширина блока */
     height: 100%; /* Высота блока */
+    border: solid 1px black; /* Параметры рамки */
     padding: 5px; /* Поля вокруг текста */
+   }
+   #map-options {
+    width: 100%; /* Ширина блока */
+    height: 20%; /* Высота блока */
+    border: solid 1px black; /* Параметры рамки */
+   }
+   #map {
+    overflow: scroll; /* Добавляем полосы прокрутки */
+    width: 100%; /* Ширина блока */
+    height: 80%; /* Высота блока */
     border: solid 1px black; /* Параметры рамки */
    }
    #tools{
@@ -57,22 +68,31 @@
   </style>
   </head>
   <body>
-
-    <div id="container">
-      <div id="map" class="map" id="canvas-frame">
-        <canvas id="canvas-container"></canvas>
+  <div id="container">
+    <div id="map-container">
+      <div id="map-options">
+            <p id="map_name" width="250" height="250" scrolling="false" >Map Name:
+                <input id="map_name_input" type="text" name="map_name_input">
+            </p>
+            <input type="checkbox" id="is_submap" name="is_submap">
+            <label for="is_submap">as a part of Map:</label>
+            <input id="parent_map_name_input" type="text" name="parent_map_name_input">
+        </div>
+        <div id="map" class="map">
+          <canvas id="canvas-container"></canvas>
+        </div>
+    </div>
+    <div id="tools" class="tools" >
+      <div id="brushes" class="brushes" >
+         <p>Кисти</p>
+         <button class="vs-button" id="brush1" title="1 клетка" alt="1 клетка">1*1</button>
+         <button class="vs-button" id="brush3" title="9 клеток" alt="9 клеток">3*3</button>
+         <button class="vs-button" id="brush5" title="25 клеток" alt="25 клеток">5*5</button>
       </div>
-      <div id="tools" class="tools" >
-        <div id="brushes" class="brushes" >
-           <p>Кисти</p>
-           <button class="vs-button" id="brush1" title="1 клетка" alt="1 клетка">1*1</button>
-           <button class="vs-button" id="brush3" title="9 клеток" alt="9 клеток">3*3</button>
-           <button class="vs-button" id="brush5" title="25 клеток" alt="25 клеток">5*5</button>
-        </div>
-        <div id="terrans" class="terrans" >
+      <div id="terrans" class="terrans" >
            <p>Рельеф</p>
-        </div>
       </div>
     </div>
+  </div>
   </body>
 </html>
