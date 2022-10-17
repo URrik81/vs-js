@@ -30,6 +30,7 @@
 ![Доход с пустыни](images/desert_income.png)
 
 кроме того, если постройка была основана на клетке с рекой или берегу моря, в доход добавляется еще одна монета
+
 ![Доход с воды1](images/water1_income.png) ![Доход с воды2](images/water2_income.png) ![Доход с воды3](images/water3_income.png) ![Доход с воды4](images/water4_income.png) ![Доход с воды5](images/water5_income.png) ![Доход с воды6](images/water6_income.png) ![Доход с воды7](images/water7_income.png)
 Таблица построек:
 
